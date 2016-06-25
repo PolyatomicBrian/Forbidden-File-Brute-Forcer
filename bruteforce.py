@@ -15,7 +15,7 @@ from urllib2 import URLError
 def func():
 
     #URL up to (and including) the parent directory you want to check.
-    url = "http://www.brianjopling.com/img/"
+    url = "http://www.example.com/topsecret/images/"
     #Extensions for the file types you want to find. (The more extensions, the longer the program will take to run.)
     extensions = ['.png', '.jpg']
 
