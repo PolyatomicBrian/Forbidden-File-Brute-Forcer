@@ -15,9 +15,9 @@ from urllib2 import URLError
 def func():
 
     #URL up to (and including) the parent directory you want to check.
-    url = "http://www.example.com/topsecret/images/"
+    url = "http://www.brianjopling.com/img/"
     #Extensions for the file types you want to find. (The more extensions, the longer the program will take to run.)
-    extensions = ['.png', '.html']
+    extensions = ['.png', '.jpg']
 
     #Get the file containing all the words you want to try.
     dic = open('dictionary.txt')
@@ -50,7 +50,7 @@ def func():
                     currentURL = url + word + extension
                     #Gets raw data of website with file name appended.
                     raw = urllib2.urlopen(currentURL).read()
-                    print currentURL + ": Found."
+                    print "--------------------------------------------------------\n" + currentURL + ": Found." + "\n--------------------------------------------------------"
                     #Write the word and extension to the foundWords.txt file created earlier.
                     foundWords.write(word + extension + '\n')
                 #If nothing is found, an exception will be thrown.
@@ -61,7 +61,7 @@ def func():
 func()
 
 #Input to prevent premature termination.
-k = input("Type anything to quit: ")
+k = input("\nType anything to quit: ")
 
 #Close foundWords.txt file to prevent possible issues.
 foundWords.close()
